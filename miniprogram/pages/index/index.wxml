@@ -1,0 +1,58 @@
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="card user-info">
+    <block wx:if="{{!hasUserInfo}}">
+      <button class="btn" bindtap="getUserProfile">登录</button>
+    </block>
+    <block wx:else>
+      <view class="flex align-center">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        <view class="ml-20">
+          <view class="nickname">{{userInfo.nickName}}</view>
+          <view class="status">在线</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 数据统计区域 -->
+  <view class="card stats-card">
+    <view class="flex justify-between">
+      <view class="stat-item">
+        <view class="stat-value">{{resumeStats.views}}</view>
+        <view class="stat-label">浏览</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{resumeStats.likes}}</view>
+        <view class="stat-label">喜欢</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{resumeStats.matches}}</view>
+        <view class="stat-label">匹配</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能按钮区域 -->
+  <view class="card action-card">
+    <button class="btn mb-20" bindtap="navigateToEdit">编辑我的简历</button>
+    <button class="btn" bindtap="navigateToBrowse">浏览其他简历</button>
+  </view>
+
+  <!-- 最近访客区域 -->
+  <view class="card visitors-card">
+    <view class="card-title">最近访客</view>
+    <view class="visitors-list">
+      <block wx:if="{{recentVisitors.length > 0}}">
+        <view class="visitor-item" wx:for="{{recentVisitors}}" wx:key="id">
+          <image class="visitor-avatar" src="{{item.avatarUrl}}"></image>
+          <view class="visitor-info">
+            <view class="visitor-name">{{item.nickName}}</view>
+            <view class="visitor-time">{{item.visitTime}}</view>
+          </view>
+        </view>
+      </block>
+      <view wx:else class="empty-tip">暂无访客</view>
+    </view>
+  </view>
+</view>

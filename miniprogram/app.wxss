@@ -1,0 +1,125 @@
+/* 全局样式 */
+page {
+  --primary-color: #FF69B4;
+  --text-color: #333333;
+  --border-color: #EEEEEE;
+  --background-color: #F8F8F8;
+  background-color: var(--background-color);
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* 通用容器 */
+.container {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+/* 卡片样式 */
+.card {
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 按钮样式 */
+.btn {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border-radius: 44rpx;
+  padding: 20rpx 40rpx;
+  font-size: 32rpx;
+  border: none;
+  text-align: center;
+}
+
+.btn-hover {
+  opacity: 0.8;
+}
+
+/* 输入框样式 */
+.input {
+  border: 2rpx solid var(--border-color);
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 分割线 */
+.divider {
+  height: 2rpx;
+  background-color: var(--border-color);
+  margin: 20rpx 0;
+}
+
+/* 头像样式 */
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 8rpx 20rpx;
+  background-color: rgba(255, 105, 180, 0.1);
+  color: var(--primary-color);
+  border-radius: 24rpx;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+}
+
+/* 列表项样式 */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background: #FFFFFF;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+/* 文本溢出省略 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 弹性布局工具类 */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/* 间距工具类 */
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.ml-20 {
+  margin-left: 20rpx;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}

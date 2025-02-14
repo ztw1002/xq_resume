@@ -1,0 +1,88 @@
+<view class="container">
+  <form bindsubmit="submitForm">
+    <view class="card">
+      <view class="form-group">
+        <view class="label">姓名</view>
+        <input class="input" data-field="name" value="{{formData.name}}" bindinput="bindInput" placeholder="请输入姓名"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">性别</view>
+        <radio-group class="radio-group" data-field="gender" bindchange="bindInput">
+          <label class="radio" wx:for="{{genderOptions}}" wx:key="*this">
+            <radio value="{{item}}" checked="{{formData.gender === item}}"/>{{item}}
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="form-group">
+        <view class="label">年龄</view>
+        <input class="input" type="number" data-field="age" value="{{formData.age}}" bindinput="bindInput" placeholder="请输入年龄"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">身高（cm）</view>
+        <input class="input" type="number" data-field="height" value="{{formData.height}}" bindinput="bindInput" placeholder="请输入身高"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">学历</view>
+        <picker class="picker" data-field="education" bindchange="bindInput" value="{{formData.education}}" range="{{educationOptions}}">
+          <view class="picker-inner">{{formData.education || '请选择学历'}}</view>
+        </picker>
+      </view>
+
+      <view class="form-group">
+        <view class="label">职业</view>
+        <input class="input" data-field="occupation" value="{{formData.occupation}}" bindinput="bindInput" placeholder="请输入职业"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">收入</view>
+        <input class="input" data-field="income" value="{{formData.income}}" bindinput="bindInput" placeholder="请输入月收入（可选）"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">所在地</view>
+        <input class="input" data-field="location" value="{{formData.location}}" bindinput="bindInput" placeholder="请输入所在城市"/>
+      </view>
+
+      <view class="form-group">
+        <view class="label">婚姻状况</view>
+        <picker class="picker" data-field="maritalStatus" bindchange="bindInput" value="{{formData.maritalStatus}}" range="{{maritalStatusOptions}}">
+          <view class="picker-inner">{{formData.maritalStatus || '请选择婚姻状况'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="form-group">
+        <view class="label">个人照片</view>
+        <view class="photo-list">
+          <view class="photo-item" wx:for="{{formData.photos}}" wx:key="*this">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <view class="photo-delete" data-index="{{index}}" bindtap="removeImage">×</view>
+          </view>
+          <view class="photo-add" bindtap="chooseImage" wx:if="{{formData.photos.length < maxPhotos}}">
+            <view class="add-icon">+</view>
+            <view class="add-text">添加照片</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="form-group">
+        <view class="label">个人介绍</view>
+        <textarea class="textarea" data-field="introduction" value="{{formData.introduction}}" bindinput="bindInput" placeholder="请介绍一下自己（兴趣爱好、性格特点等）"></textarea>
+      </view>
+
+      <view class="form-group">
+        <view class="label">择偶要求</view>
+        <textarea class="textarea" data-field="requirements" value="{{formData.requirements}}" bindinput="bindInput" placeholder="请描述您的择偶要求（年龄、学历、性格等）"></textarea>
+      </view>
+    </view>
+
+    <view class="submit-btn">
+      <button class="btn" form-type="submit">保存资料</button>
+    </view>
+  </form>
+</view>

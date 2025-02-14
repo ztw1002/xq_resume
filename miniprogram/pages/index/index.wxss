@@ -1,0 +1,94 @@
+.user-info {
+  text-align: center;
+}
+
+.nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.status {
+  font-size: 24rpx;
+  color: var(--primary-color);
+  margin-top: 4rpx;
+}
+
+.stats-card {
+  margin-top: 30rpx;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 8rpx;
+}
+
+.action-card {
+  margin-top: 30rpx;
+}
+
+.visitors-card {
+  margin-top: 30rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.visitors-list {
+  margin-top: 20rpx;
+}
+
+.visitor-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.visitor-item:last-child {
+  border-bottom: none;
+}
+
+.visitor-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.visitor-info {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.visitor-name {
+  font-size: 28rpx;
+  color: var(--text-color);
+}
+
+.visitor-time {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 4rpx;
+}
+
+.empty-tip {
+  text-align: center;
+  color: #999999;
+  font-size: 28rpx;
+  padding: 40rpx 0;
+}
